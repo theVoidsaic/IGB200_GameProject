@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class InGameMenu_nav : MonoBehaviour
 {
@@ -15,6 +16,13 @@ public class InGameMenu_nav : MonoBehaviour
         {
             Debug.Log("Intro Video Skipped!.");
             video.Stop();
+            video.enabled = false;
         }
+    }
+
+    public void Reset()
+    {
+        Debug.Log("Reseting Game. Loading default Game Scene (2)...");
+        SceneManager.LoadScene(2);   
     }
 }
